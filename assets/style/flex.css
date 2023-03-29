@@ -1,0 +1,184 @@
+/* Cabeçalho */
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 33px;
+}
+
+/* Categorias */
+
+.categorias__lista {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+/* Destaques */
+
+.destaques {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.destaque__barra {
+  flex-grow: 1;
+}
+
+/* Eventos */
+
+.eventos__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  justify-content: center;
+}
+
+.eventos__item {
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+/* Agenda */
+
+.agenda__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  justify-content: center;
+}
+
+.agenda__item {
+  flex-grow: 1;
+}
+
+.eventos__container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.eventos__botao,
+.agenda__botao {
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  margin-right: 1rem;
+  text-align: center;
+  padding: 0.6rem;
+  width: 125px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 18px;
+}
+
+/* Rodapé */
+
+.rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+
+.rodape__logo {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 720px) {
+  /* Cabeçalho */
+
+  .menu {
+    column-gap: 75px;
+  }
+
+  /* Categorias */
+
+  .categorias__lista {
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+  }
+
+  /* Agenda */
+
+  .agenda__lista {
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .eventos__container {
+    justify-content: flex-end;
+  }
+
+  .agenda__item {
+    flex-grow: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* Cabeçalho */
+
+  .menu {
+    column-gap: 103px;
+    flex-wrap: nowrap;
+  }
+
+  .menu__item:nth-child(1) {
+    order: 1;
+  }
+
+  .menu__item:nth-child(2) {
+    order: 3;
+  }
+
+  .menu__item:nth-child(3) {
+    order: 4;
+  }
+
+  .menu__item:nth-child(4) {
+    order: 5;
+  }
+
+  .menu__item:nth-child(5) {
+    order: 2;
+  }
+
+  /* Categorias */
+
+  .categorias {
+    display: grid;
+    grid-template-areas:
+      "titulo titulo"
+      "lista destaque"
+      "lista imagem";
+    gap: 1rem 1.5rem;
+    grid-template-columns: calc(50% - 0.75rem);
+    grid-template-rows: auto 1fr;
+  }
+
+  .categorias__titulo {
+    grid-area: titulo;
+  }
+
+  .categorias__lista {
+    grid-area: lista;
+  }
+
+  .categorias__destaques {
+    grid-area: destaque;
+  }
+
+  .categorias__imagem {
+    grid-area: imagem;
+  }
+
+  /* Agenda */
+
+  .agenda__item {
+    flex-grow: 0;
+  }
+}
